@@ -1,0 +1,23 @@
+
+Aihe: Pallojen liike laatikossa
+Toteutetaan idealisoitujen hiukkasten (pallojen/ympyröiden) liike rajatulla 2D alueella. Tavoitteena on, että reaaliajassa simuloidaan suurehkon hiukkasmäärän liike. Käyttäjä pystyy vaikuttamaan yksittäisten hiukkasten säteeseen, massaan, nopeuteen ja paikkaan. Simulaation käynnistyttyä ruudulla pitäisi näkyä kimpoilevin pallojen sekamelska, joka noudattaa yksinkertaisia elastisten törmäyksien lakeja. 
+
+Tavoitteena on, että käyttäjä voi syöttää alkutilanteen ohjelmalle tiedosto muodossa. Lisäksi alkutilanne on muokattavissa ennen simuloinnin aloitusta. Ohjelma osaa myös arpoa pallot. Käyttäjä voi valita, että simulointi tallentaa datapisteet määräämänsä aika-askeleen välein.
+
+Käytäjät: yksinäinen fyysikko
+
+Käyttäjien toiminnot:
+Alueen luonti
+	-Määritetään seinien paikat
+	-Mahdollisesti seinälle voidaan antaa myös liike (esim. laatikon 3 seinää paikoillaan, yksi oskilloi)
+Pallojen luonti
+	-Palloille annetaan alkuarvot (paikka, nopeus, massa, säde)
+	-Tämä tehdään joko tiedostosta lukemalla, käsin syöttämällä, tai arpoen
+	-Pallojen alkuasetelma voidaan näyttää ruudulla
+Simuloinnin Käynnistys
+	-Simuloinnin on tarkoitus jatkua kunnes käyttäjä sen lopettaa
+Simuloinnin pysäytys
+	-Simulionti pysähtyy nappia painamalla
+	-Käyttäjän mahdollista muokata alkuarvoja, jatkaa simulointia, tai palata ohjelman avaussivulle
+Pallojen paikka- ja nopeustietojen talletus
+	-Ennen simuloinnin aloitusta käyttäjä voi määritellä datapisteiden tallennuksen määrätyn aika-askeleen välein
