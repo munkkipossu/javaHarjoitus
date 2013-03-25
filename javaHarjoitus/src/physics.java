@@ -8,7 +8,6 @@
  * @author tolaakso
  */
 public interface physics {
-    public double sade;
-    void tormays(Object eka, Object toka);
+    public void tormays(Object eka, Object toka);
   
 }
