@@ -7,22 +7,22 @@
  *
  * @author tolaakso
  */
-public class tila {
+public class Tila {
     private double aikaAskel;
     private double aika;
     private double maxAika;
-    private alue kentta;
+    private Alue kentta;
     
     
-    public tila(){
+    public Tila(){
         this.aikaAskel = 0.01;
         this.aika = 0.0;
-        this.kentta = new alue();
+        this.kentta = new Alue();
     }    
     
     public void eteneAjassa(){
         this.aika += this.aikaAskel;
-        alue.liike(aikaAskel);
+        this.kentta.liike(aikaAskel);
     }
 
      public String toString() {

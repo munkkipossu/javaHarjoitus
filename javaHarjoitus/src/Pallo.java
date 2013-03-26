@@ -6,17 +6,17 @@
  * Riippu miten määrittelen ongelman.
  */
 
-public class pallo extends kappale{
+public class Pallo extends Kappale{
 
-    public pallo(){
+    public Pallo(){
         super(-1.0,-1.0,0.0,0.0,1.0,1.0);
     }
     
-    public pallo(double x, double y, double vx , double vy, double massa, double sade){
+    public Pallo(double x, double y, double vx , double vy, double massa, double sade){
         super(x, y, vx, vy, massa, sade);
     }
     
-    void liike(kappale liikkuva, double aikaAskel){
+    void liike(Kappale liikkuva, double aikaAskel){
         
     }
     

@@ -7,7 +7,7 @@
 
 import java.util.*;
 
-public class alue{
+public class Alue{
     
     // Kun alueen leveys ja korkes on määritelty, voidaan niiden avulla luoda 
     // sitä määrittävät reunat (suorakaideoliot). 
@@ -18,17 +18,18 @@ public class alue{
     // private suorakaide reunat;
     
     // Alueella oleskelevat ja liikkuvat kappaleet
-    private List<kappale> esineet;    
-    public alue(){
+    private List<Kappale> esineet;    
+   
+    public Alue(){
         this.leveys=100;
         this.korkeus=100;
-        this.esineet = new ArrayList<kappale>();
+        this.esineet = new ArrayList<Kappale>();
     }
     
-    public void addKappale(kappale lisattava){
-        if(!lisattava.tormaysVaara(this.esineet)){
-            add this.esineet(lisattava);
-        }
+    public void addKappale(Kappale lisattava){
+//        if(!lisattava.tormaysVaara(this.esineet)){
+//            add this.esineet(lisattava);
+//        }
     }
     
     public void liike(double aikaAskel){
@@ -36,7 +37,7 @@ public class alue{
     }
     
     public String toString() {
-        return "woot";
+        return "Alue tostring";
     }
 
 }
