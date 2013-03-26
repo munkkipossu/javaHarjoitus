@@ -11,18 +11,9 @@ import java.util.*;
 
 public class Alue{
 
-    
-    private final static double REUNAN_PAKSUUS=5.0;
-    private double leveys;
-    private double korkeus;
+  //  private Reuna reunat;               // Alueen reunat. Määritellään miten määritellään.
+    private List<Kappale> esineet;      // Alueella oleskelevat ja liikkuvat kappaleet
 
-    
-    // suorakaiteet jossain titotomuodossa
-    private List<Suorakaide> reunat;
-
-    // Alueella oleskelevat ja liikkuvat kappaleet
-    private List<Kappale> esineet; 
-   
     
     // Konstruktori -- ovat vielä himean vajavaisia
 
@@ -31,11 +22,7 @@ public class Alue{
     }
     
     public Alue(double leveys, double korkeus){
-        this.leveys=leveys;
-        this.korkeus=korkeus;
         this.esineet = new ArrayList<Kappale>();
-        this.reunat = new ArrayList<Suorakaide>();
-        this.reunat.add(Suorakaide(0.5*leveys, korkeus + 0.5*REUNAN_PAKSUUS));
     }
     
     

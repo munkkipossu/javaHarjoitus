@@ -21,12 +21,20 @@ public class PalloTest {
     
     @Before
     public void setUp() {
+        pallo=new Pallo();
     }
     
     
 
     @Test
     public void pallonTulostus() {
-        
+        assertEquals("1.0 1.0 1.0 1.0", pallo.toString());
     }
+
+    @Test
+    public void pallonLiike() {
+        pallo.liike(1.0);
+        assertEquals("11.0 11.0 1.0 1.0", pallo.toString());
+    }
+
 }
