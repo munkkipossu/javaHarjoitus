@@ -7,18 +7,17 @@
  */
 
 public class pallo extends kappale{
-    private double sade;
-    
 
     public pallo(){
-        super(1,1,0,0,1);
-        this.sade=1;
+        super(-1.0,-1.0,0.0,0.0,1.0,1.0);
     }
     
-    public pallo(double x, double y, double vx , double vy double massa,
-           double radius){
-        super(x, y, vx, vy, massa);
-        this.sade=radius;
+    public pallo(double x, double y, double vx , double vy, double massa, double sade){
+        super(x, y, vx, vy, massa, sade);
+    }
+    
+    void liike(kappale liikkuva, double aikaAskel){
+        
     }
     
     
