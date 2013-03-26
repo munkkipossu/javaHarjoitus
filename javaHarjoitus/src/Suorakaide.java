@@ -26,7 +26,7 @@ public class Suorakaide extends Kappale{
         System.out.printf("Suorakaide törmäys");
     }
     
-        void liike(Kappale liikkuva, double aikaAskel){
+    void liike(double aikaAskel){
         
     }
 }

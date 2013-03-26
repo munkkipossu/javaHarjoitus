@@ -16,7 +16,7 @@ public class Pallo extends Kappale{
         super(x, y, vx, vy, massa, sade);
     }
     
-    void liike(Kappale liikkuva, double aikaAskel){
+    void liike(double aikaAskel){
         
     }
     

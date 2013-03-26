@@ -25,7 +25,8 @@ public abstract class Kappale extends Dimensio{
         this.paikka[1]=this.paikka[1]+this.nopeus[1]*aikaAskel;
     }
     
-    abstract void liike(Kappale liikkuva, double aikaAskel);
+    // Liike ottaa huomioon mahdollisen törmäyksen
+    abstract void liike(double aikaAskel);
    
    
 }

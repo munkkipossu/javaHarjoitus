@@ -27,12 +27,13 @@ public class Alue{
     }
     
     public void addKappale(Kappale lisattava){
-//        if(!lisattava.tormaysVaara(this.esineet)){
-//            add this.esineet(lisattava);
-//        }
+         this.esineet.add(lisattava);
     }
     
     public void liike(double aikaAskel){
+        for(Kappale esine: this.esineet){
+            esine.liike(aikaAskel);
+        }
         
     }
     
