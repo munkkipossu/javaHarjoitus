@@ -26,9 +26,13 @@ public class alue{
     }
     
     public void addKappale(kappale lisattava){
-        if(! lisattava.tormaysaVaara(this.esineet)){
+        if(!lisattava.tormaysVaara(this.esineet)){
             add this.esineet(lisattava);
         }
+    }
+    
+    public void liike(double aikaAskel){
+        
     }
     
     public String toString() {
