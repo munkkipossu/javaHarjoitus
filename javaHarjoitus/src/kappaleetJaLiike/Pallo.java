@@ -28,6 +28,6 @@ public class Pallo extends Kappale{
     }
     
     public String toString(){
-        return super.getPaikkaX() + " " + super.getPaikkaY();
+        return super.getPaikkaX() + " " + super.getPaikkaY() + " " + super.getSade() + " " + super.getMassa();
     }
 }

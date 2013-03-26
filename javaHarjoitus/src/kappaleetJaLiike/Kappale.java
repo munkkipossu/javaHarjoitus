@@ -8,6 +8,7 @@ public abstract class Kappale{
     private double[] paikka;
     private double[] nopeus;
     private double sade;
+    private double likkuuko;
     
     public Kappale(double x, double y, double vx, double vy, double massa, double sade){
         this.massa=massa;
@@ -33,6 +34,14 @@ public abstract class Kappale{
 
     public double getPaikkaY(){
         return this.paikka[1];
+    }
+    
+    public double getSade(){
+        return this.sade;
+    }
+    
+    public double getMassa(){
+        return this.massa;
     }
 
     // Liike ottaa huomioon mahdollisen törmäyksen

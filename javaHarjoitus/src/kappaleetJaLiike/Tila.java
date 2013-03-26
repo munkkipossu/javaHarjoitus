@@ -15,7 +15,6 @@ import java.io.FileWriter;
 public class Tila {
     private double aikaAskel;
     private double aika;
-    private double maxAika;
     private Alue kentta;
     
     
@@ -23,10 +22,10 @@ public class Tila {
         this.aikaAskel = 0.01;
         this.aika = 0.0;
         this.kentta = new Alue();
-    }    
+    }
     
     public void lisaaKappale(){
-        this.kentta.addKappale(new Pallo());
+        this.kentta.lisaaKappale(new Pallo());
     }
     
     public void eteneAjassa(){
