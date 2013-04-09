@@ -11,17 +11,20 @@ import java.util.*;
 
 public class Alue{
 
-  //  private Reuna reunat;               // Alueen reunat. Määritellään miten määritellään.
+    private double[] reunat;               // Alueen reunat. Määritellään miten määritellään.
     private List<Kappale> esineet;      // Alueella oleskelevat ja liikkuvat kappaleet
 
     
     // Konstruktori -- ovat vielä himean vajavaisia
 
     public Alue(){
-        this(100.0, 100.0);
+        this(0.01, 0.01);
     }
     
     public Alue(double leveys, double korkeus){
+        this.reunat = new double[2];
+        this.reunat[0]=leveys;
+        this.reunat[1]=korkeus;
         this.esineet = new ArrayList<Kappale>();
     }
     
@@ -38,6 +41,14 @@ public class Alue{
         }
     }
     
+    public Kappale getKappale(int monesko){
+        if(this.montakoKappaletta() > monesko && monesko >-1){
+            return esineet.get(monesko);
+        }
+        else
+            return null;
+    }
+    
     public int montakoKappaletta(){
         return this.esineet.size();
     }
@@ -47,6 +58,31 @@ public class Alue{
             esine.liike(aikaAskel);
         }
         
+    }
+    
+    
+    
+    // Tämä pitää ehdottomasti refaktoroida jossain vaiheessa
+    
+    public void tarkistaReunat(){
+        for(Kappale kappale: this.esineet){
+            if(kappale.getPaikkaX()<0){
+                kappale.setPaikkaX(-1*kappale.getPaikkaX());
+                kappale.setNopeusX(-1*kappale.getNopeusX());
+            }
+            if(kappale.getPaikkaY()<0){
+                kappale.setPaikkaY(-1*kappale.getPaikkaY());
+                kappale.setNopeusY(-1*kappale.getNopeusY());
+            }
+            if(kappale.getPaikkaX()>this.reunat[0]){
+                kappale.setPaikkaX(reunat[0]-(kappale.getPaikkaX()-reunat[0]));
+                kappale.setNopeusX(-1*kappale.getNopeusX());
+            }
+            if(kappale.getPaikkaY()>this.reunat[1]){
+                kappale.setPaikkaY(reunat[1]-(kappale.getPaikkaY()-reunat[1]));
+                kappale.setNopeusY(-1*kappale.getNopeusY());
+            }
+        }
     }
     
     public String toString() {
