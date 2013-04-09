@@ -9,7 +9,7 @@ package kappaleetJaLiike;
  *
  * @author tolaakso
  */
-
+import java.awt.Graphics;
 import java.io.FileWriter;
 
 public class Tila {
@@ -33,6 +33,10 @@ public class Tila {
         this.kentta.liike(aikaAskel);
     }
     
+    public double getAika(){
+        return this.aika;
+    }
+    
     public void tallennaTila(FileWriter kirjoittaja) throws Exception {
         kirjoittaja.write(this.toString());
     }
@@ -41,4 +45,12 @@ public class Tila {
         return this.aika+"\n"+this.kentta;
     }
 
+    public void piirra(Graphics graphics){
+        graphics.fillOval((int)(10*this.getAika()), (int)(10*this.getAika()), 10, 10);
+    }
+    
+    public void tormays(){
+        this.kentta.tarkistaReunat();
+    }
+    
 }

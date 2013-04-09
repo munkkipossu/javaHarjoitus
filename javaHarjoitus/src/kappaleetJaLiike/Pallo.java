@@ -18,8 +18,10 @@ public class Pallo extends Kappale{
         super(x, y, vx, vy, massa, sade);
     }
     
+    @Override
     void liike(double aikaAskel){
         super.muutaPaikka(aikaAskel);
+        System.out.println(this);
     }
     
     

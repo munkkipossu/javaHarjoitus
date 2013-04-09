@@ -36,6 +36,29 @@ public abstract class Kappale{
         return this.paikka[1];
     }
     
+    public double getNopeusX(){
+        return this.nopeus[0];
+    }
+
+    public double getNopeusY(){
+        return this.nopeus[1];
+    }
+    public void setPaikkaX(double x){
+        this.paikka[0]=x;
+    }
+
+    public void setPaikkaY(double x){
+        this.paikka[1]=x;
+    }
+
+    public void setNopeusX(double x){
+        this.nopeus[0]=x;
+    }
+    
+    public void setNopeusY(double x){
+        this.nopeus[1]=x;
+    }
+
     public double getSade(){
         return this.sade;
     }
