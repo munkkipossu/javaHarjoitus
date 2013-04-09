@@ -15,14 +15,31 @@ import java.awt.Color;
  */
 public class PiirrosRuutu extends JPanel {
 
-    public PiirrosRuutu(Tila uusi){
+    private Tila tila;
+    
+    public PiirrosRuutu(Tila tila){
         setVisible(true);
+        this.tila=tila;
         super.setBackground(Color.WHITE);
     }
     
     @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
-        graphics.fillOval(50, 50, 10, 10);
+        tila.piirra(graphics);
     }
+    
+    public double getAika(){
+        return this.tila.getAika();
+    }
+    
+    public void paivitaPiirros(Graphics graphics){
+        this.tila.piirra(graphics);
+    }
+    
+    public void eteneAjassa(){
+        this.tila.eteneAjassa();
+        this.tila.tormays();
+    }
+
 }

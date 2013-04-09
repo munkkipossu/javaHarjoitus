@@ -4,6 +4,8 @@
  */
 import kappaleetJaLiike.Tila;
 import java.io.FileWriter;
+import GUI.*;
+import javax.swing.SwingUtilities;
 
 public class main {
 
@@ -19,9 +21,17 @@ public class main {
         ohjelma.lisaaKappale();
         System.out.println(ohjelma);
 
-        for(int i=0; i<100; i++){
+ /*       for(int i=0; i<100; i++){
             ohjelma.eteneAjassa();
             System.out.println(ohjelma);
             }
-        }
-}
+            *
+            * 
+*/      
+        Kayttoliittyma aloitus = new Kayttoliittyma();
+        SwingUtilities.invokeLater(aloitus);
+    
+    
+    }
+
+ }

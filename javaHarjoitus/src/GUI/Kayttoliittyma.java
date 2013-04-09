@@ -15,17 +15,17 @@ import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.*;
-
+import kappaleetJaLiike.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class Aloitusruutu implements Runnable {
+public class Kayttoliittyma implements Runnable {
 
     private JFrame frame;
 
-    public Aloitusruutu() {
+    public Kayttoliittyma() {
     }
 
     @Override
@@ -40,20 +40,47 @@ public class Aloitusruutu implements Runnable {
         frame.setVisible(true);
     }
     
-    
+    /* Tässä luodaan ruutu joka avautuu kun ohjelma ajetaan. Se on vielä
+     * todellinen raakile, rumakin, mutta nyt toiminnallisuus on kaiken a ja o.
+     */
     private void luoKomponentit(Container container) {
-        GridLayout layout = new GridLayout(2,1);
+        GridLayout layout = new GridLayout(4,1);
         container.setLayout(layout);
 
         JButton aloitusNappi = new JButton("Start!");
-        AloitusKuuntelija aloitus = new AloitusKuuntelija();
+        JButton loadNappi = new JButton("load!");
+        JButton randomizeNappi= new JButton("randomize!");
+        Tila tila=new Tila();
+        
+        PiirrosRuutu ruutu = new PiirrosRuutu(tila);
+
+        Simulointi aloitus = new Simulointi(ruutu, ruutu);
         aloitusNappi.addActionListener(aloitus);
 
         container.add(aloitusNappi);
-        container.add(new PiirrosRuutu());
+        container.add(loadNappi);
+        container.add(randomizeNappi);
+        container.add(ruutu);
+        
     }
+  /*  
+    private void luoKomponentit(Container container) {
+      
+        PiirrosRuutu ruutu = new PiirrosRuutu(new Tila());
+        container.add(ruutu);
+        container.add(luoNapit(), BorderLayout.NORTH);
+    }
+    */
     public JFrame getFrame() {
         return frame;
+    }
+    
+    private JPanel luoNapit() {
+        JPanel panel = new JPanel(new GridLayout(1, 3));
+        panel.add(new JButton("Start!"));
+        panel.add(new JButton("load!"));
+        panel.add(new JButton("randomize!"));
+        return panel;
     }
 
 }
