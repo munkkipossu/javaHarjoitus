@@ -46,7 +46,9 @@ public class Tila {
     }
 
     public void piirra(Graphics graphics){
-        graphics.fillOval((int)(10*this.getAika()), (int)(10*this.getAika()), 10, 10);
+        this.kentta.piirra(graphics);
+        //System.out.println((int)(10*this.getAika()));
+        //graphics.fillOval((int)(10*this.getAika()), (int)(10*this.getAika()), 10, 10);
     }
     
     public void tormays(){

@@ -54,7 +54,7 @@ public class Kayttoliittyma implements Runnable {
         
         PiirrosRuutu ruutu = new PiirrosRuutu(tila);
 
-        Simulointi aloitus = new Simulointi(ruutu, ruutu);
+        Simulointi aloitus = new Simulointi(ruutu);
         aloitusNappi.addActionListener(aloitus);
 
         container.add(aloitusNappi);

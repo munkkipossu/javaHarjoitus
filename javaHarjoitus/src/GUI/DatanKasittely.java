@@ -8,6 +8,6 @@ package GUI;
  *
  * @author mp
  */
-public class LoadData {
+public class DatanKasittely {
     
 }

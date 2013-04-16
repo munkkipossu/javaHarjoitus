@@ -1,5 +1,5 @@
 package kappaleetJaLiike;
-
+import java.awt.Graphics;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -40,5 +40,9 @@ public class Suorakaide extends Kappale{
     
     public String toString(){
         return super.getPaikkaX() + " " + super.getPaikkaY();
+    }
+    
+    public void piirra(Graphics graphics){
+        graphics.fillOval((int)super.getPaikkaX(), (int)super.getPaikkaY(), (int)super.getNopeusX(), (int)super.getNopeusY());
     }
 }

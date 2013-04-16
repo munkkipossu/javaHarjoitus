@@ -1,5 +1,5 @@
 package kappaleetJaLiike;
-
+import java.awt.Graphics;
 /*
  * kappale 
  */
@@ -71,6 +71,8 @@ public abstract class Kappale{
     abstract void liike(double aikaAskel);
     
     public abstract String toString();
+    
+    public abstract void piirra(Graphics graphics);
    
    
 }

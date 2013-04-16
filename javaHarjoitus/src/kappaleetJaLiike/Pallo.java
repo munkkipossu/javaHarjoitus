@@ -1,5 +1,8 @@
-package kappaleetJaLiike;
 
+
+
+package kappaleetJaLiike;
+import java.awt.Graphics;
 
 /*
  * Pallo - alueessa törmäilevä objekti. Symmetrinen. En ole vielä päättänyt miten
@@ -11,7 +14,7 @@ package kappaleetJaLiike;
 public class Pallo extends Kappale{
 
     public Pallo(){
-        super(1.0,1.0,10.0,10.0,1.0,1.0);
+        super(100,50,10,10 ,1.0,40.0);
     }
     
     public Pallo(double x, double y, double vx , double vy, double massa, double sade){
@@ -30,6 +33,13 @@ public class Pallo extends Kappale{
     }
     
     public String toString(){
-        return super.getPaikkaX() + " " + super.getPaikkaY() + " " + super.getSade() + " " + super.getMassa();
+        return super.getPaikkaX() + " " + super.getPaikkaY() + " " + super.getNopeusX() + " " + super.getNopeusY() + " " + super.getSade() + " " + super.getMassa();
     }
+
+    public void piirra(Graphics graphics){
+        graphics.fillOval((int)super.getPaikkaX(), (int)super.getPaikkaY(), (int)super.getSade(), (int)super.getSade());
+    }
+    
+    
+
 }

@@ -8,6 +8,7 @@ package kappaleetJaLiike;
 
 
 import java.util.*;
+import java.awt.Graphics;
 
 public class Alue{
 
@@ -18,7 +19,7 @@ public class Alue{
     // Konstruktori -- ovat vielä himean vajavaisia
 
     public Alue(){
-        this(0.01, 0.01);
+        this(800, 250);
     }
     
     public Alue(double leveys, double korkeus){
@@ -57,31 +58,38 @@ public class Alue{
         for(Kappale esine: this.esineet){
             esine.liike(aikaAskel);
         }
-        
     }
     
-    
+    public void piirra(Graphics graphics){
+        for(Kappale esine: this.esineet){
+            esine.piirra(graphics);
+        }
+    }
     
     // Tämä pitää ehdottomasti refaktoroida jossain vaiheessa
     
     public void tarkistaReunat(){
         for(Kappale kappale: this.esineet){
-            if(kappale.getPaikkaX()<0){
-                kappale.setPaikkaX(-1*kappale.getPaikkaX());
+            if(kappale.getPaikkaX()<kappale.getSade()){
+                kappale.setPaikkaX(2*kappale.getSade()-kappale.getPaikkaX());
                 kappale.setNopeusX(-1*kappale.getNopeusX());
+                System.out.println("eka törmäys");
             }
-            if(kappale.getPaikkaY()<0){
-                kappale.setPaikkaY(-1*kappale.getPaikkaY());
+            if(kappale.getPaikkaY()<kappale.getSade()){
+                kappale.setPaikkaY(2*kappale.getSade()-kappale.getPaikkaY());
                 kappale.setNopeusY(-1*kappale.getNopeusY());
+                                System.out.println("toka törmäys");
             }
-            if(kappale.getPaikkaX()>this.reunat[0]){
-                kappale.setPaikkaX(reunat[0]-(kappale.getPaikkaX()-reunat[0]));
+            if(kappale.getPaikkaX()>this.reunat[0]-kappale.getSade()){
+                kappale.setPaikkaX(2*reunat[0]-2*kappale.getSade()-kappale.getPaikkaX());
                 kappale.setNopeusX(-1*kappale.getNopeusX());
+                System.out.println("kolmas törmäys");
             }
-            if(kappale.getPaikkaY()>this.reunat[1]){
-                kappale.setPaikkaY(reunat[1]-(kappale.getPaikkaY()-reunat[1]));
+             if(kappale.getPaikkaY()>this.reunat[1]-kappale.getSade()){
+                kappale.setPaikkaY(2*reunat[1]-2*kappale.getSade()-kappale.getPaikkaY());
                 kappale.setNopeusY(-1*kappale.getNopeusY());
-            }
+                System.out.println("neljäs törmäys");
+             }
         }
     }
     

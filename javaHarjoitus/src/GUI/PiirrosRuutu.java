@@ -32,14 +32,14 @@ public class PiirrosRuutu extends JPanel {
     public double getAika(){
         return this.tila.getAika();
     }
-    
-    public void paivitaPiirros(Graphics graphics){
-        this.tila.piirra(graphics);
-    }
-    
+   
     public void eteneAjassa(){
         this.tila.eteneAjassa();
         this.tila.tormays();
+    }
+    
+    public void lisaaKappale(){
+        this.tila.lisaaKappale();
     }
 
 }

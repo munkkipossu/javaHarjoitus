@@ -17,12 +17,10 @@ import javax.swing.*;
 public class Simulointi implements ActionListener {
 
     private boolean onkoAloitettu;
-    private Component component;
     private PiirrosRuutu ruutu;
 
-    public Simulointi(Component component, PiirrosRuutu ruutu) {
+    public Simulointi(PiirrosRuutu ruutu) {
         onkoAloitettu = false;
-        this.component = component;
         this.ruutu = ruutu;
     }
 
@@ -42,8 +40,14 @@ public class Simulointi implements ActionListener {
              */
             Thread testi = new Thread() {
                 public void run() {
+                    boolean testi = true;
                     while(onkoAloitettu){
-                        component.repaint();
+
+                        if(testi){
+                            ruutu.lisaaKappale();
+                            testi=false;
+                        }
+                        ((Component)ruutu).repaint();
            //             ruutu.paivitaPiirros(component);
                         ruutu.eteneAjassa();
                     //    System.out.println(ruutu.getAika());
